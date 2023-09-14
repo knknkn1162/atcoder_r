@@ -1,4 +1,4 @@
-# tidyverse, bigint
+# tidyverse
 options(scipen=100)
 #conn <- file("stdin", open="r")
 conn <- stdin()
@@ -23,6 +23,7 @@ tb <- inputs |>
   pivot_longer(-row, names_to="col") |>
   mutate(col = parse_number(col))
 res <- list()
+# too slow
 for(h in 1:H) {
   for(w in 1:W) {
     res <- append(res,
