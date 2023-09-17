@@ -18,9 +18,8 @@ dummy <- A |>
   arrange(value) |>
   mutate(idx = row_number()) |>
   group_by(label) |>
-  group_map(\(stb,key) stb |>
+  group_walk(\(stb,key) stb |>
     pull(idx) |>
-    str_flatten(" ")
-  ) |>
-  unlist() |>
-  cat(sep ="\n")
+    str_flatten(" ") |>
+    cat(sep="\n")
+  )
