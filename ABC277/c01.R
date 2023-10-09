@@ -1,4 +1,3 @@
-{
 # tidyverse, utils
 options(scipen=100)
 conn <- file("stdin", open="r")
